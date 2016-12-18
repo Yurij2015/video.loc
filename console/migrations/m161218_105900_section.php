@@ -6,14 +6,27 @@ class m161218_105900_section extends Migration
 {
     public function up()
     {
+        $tableOptions = null;
+        if ($this->db->driverName === 'mysql') {
+            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
+        }
 
+        $this->createTable('section', [
+            'idsection' => $this->primaryKey(),
+            'namesection' => $this->string()->notNull()->unique(),
+            'slug' => $this->string()->notNull()->unique(),
+            'status' => $this->integer(),
+            'image_id' => $this->integer(),
+            'created_at' => $this->integer(),
+            'created_by' => $this->integer(),
+            'updated_at' => $this->integer(),
+            'updated_by' => $this->integer(),
+        ], $tableOptions);
     }
 
     public function down()
     {
-        echo "m161218_105900_section cannot be reverted.\n";
-
-        return false;
+     $this->dropTable('section');
     }
 
     /*

@@ -33,6 +33,7 @@ class m961219_111204_relations extends Migration
         //image-section
         $this->createIndex('fk_section_image_idx', '{{%section}}', 'id');
         $this->addForeignKey('fk_video_image_idx', '{{%section}}', 'id', '{{%image}}', 'id');
+
         //subcription-section
         $this->createIndex('fx_subscription_section_idx', '{{%subscription}}', 'user_id');
         $this->addForeignKey('fx_subscription_user_idx', '{{%subscription}}', 'user_id', '{{%section}}', 'id');

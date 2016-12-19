@@ -12,8 +12,8 @@ class m161218_105900_section extends Migration
         }
 
         $this->createTable('section', [
-            'idsection' => $this->primaryKey(),
-            'namesection' => $this->string()->notNull()->unique(),
+            'id' => $this->primaryKey(),
+            'name' => $this->string()->notNull()->unique(),
             'slug' => $this->string()->notNull()->unique(),
             'status' => $this->integer(),
             'image_id' => $this->integer(),

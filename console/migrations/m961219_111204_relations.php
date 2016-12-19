@@ -2,7 +2,7 @@
 
 use yii\db\Migration;
 
-class m161218_113411_topic extends Migration
+class m961219_111204_relations extends Migration
 {
     public function up()
     {
@@ -11,9 +11,8 @@ class m161218_113411_topic extends Migration
 
     public function down()
     {
-        echo "m161218_113411_topic cannot be reverted.\n";
 
-        return false;
+
     }
 
     /*

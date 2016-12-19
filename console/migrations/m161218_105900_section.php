@@ -28,15 +28,4 @@ class m161218_105900_section extends Migration
     {
      $this->dropTable('section');
     }
-
-    /*
-    // Use safeUp/safeDown to run migration code within a transaction
-    public function safeUp()
-    {
-    }
-
-    public function safeDown()
-    {
-    }
-    */
 }

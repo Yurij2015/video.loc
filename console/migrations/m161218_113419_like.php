@@ -13,6 +13,7 @@ class m161218_113419_like extends Migration
         $this->createTable('like', [
             'user_id' => $this->integer(true),
             'video_id' => $this->integer(true),
+            'PRIMARY KEY (`user_id`, `video_id`)',
         ], $tableOptions);
     }
 

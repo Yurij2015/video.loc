@@ -11,8 +11,8 @@ class m161218_113419_like extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
         $this->createTable('like', [
-            'user_id' => $this->integer(true),
-            'video_id' => $this->integer(true),
+            'user_id' => $this->integer(),
+            'video_id' => $this->integer(),
             'PRIMARY KEY (`user_id`, `video_id`)',
         ], $tableOptions);
     }

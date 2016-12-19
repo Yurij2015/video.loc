@@ -27,16 +27,19 @@ class m961219_111204_relations extends Migration
         $this->addForeignKey('fk_like_video_idx', '{{%like}}', 'user_id', '{{%video}}', 'id');
 
         //image-video
-        $this->createIndex('fk_video_image_idx', '{{%video}}', 'id');
-        $this->addForeignKey('fk_video_image_idx', '{{%video}}', 'id', '{{%image}}', 'image_id');
+        $this->createIndex('fk_video_image_idx', '{{%video}}', 'image_id');
+        $this->addForeignKey('fk_video_image_idx', '{{%video}}', 'image_id', '{{%image}}', 'id');
 
         //image-section
-        $this->createIndex('fk_section_image_idx', '{{%section}}', 'id');
-        $this->addForeignKey('fk_video_image_idx', '{{%section}}', 'id', '{{%image}}', 'id');
+        $this->createIndex('fk_section_image_idx', '{{%section}}', 'image_id');
+        $this->addForeignKey('fk_section_image_idx', '{{%section}}', 'image_id', '{{%image}}', 'id');
 
         //subcription-section
         $this->createIndex('fx_subscription_section_idx', '{{%subscription}}', 'user_id');
-        $this->addForeignKey('fx_subscription_user_idx', '{{%subscription}}', 'user_id', '{{%section}}', 'id');
+        $this->addForeignKey('fx_subscription_section_idx', '{{%subscription}}', 'user_id', '{{%section}}', 'id');
+
+
+
     }
 
     public function down()

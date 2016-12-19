@@ -65,6 +65,14 @@ class SiteController extends Controller
         ];
     }
 
+    public function actionHello(){
+        $content = 'There is the sentence we should see on site/hello!';
+
+        return $this->render('hello', [
+           'sentence' => $content
+        ]);
+    }
+
     /**
      * Displays homepage.
      *
